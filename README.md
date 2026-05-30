@@ -117,7 +117,7 @@ http://localhost/mlbb-website-kelompok-1/frontend/index.php
 (https://github.com/raa99099/mlbb-website-kelompok-1-/tree/main)
 
 **Hosting Website:**
-(belum ada)
+(https://mlbb-kelompok1.infinityfreeapp.com/index.html)
 
 ## 🎯 Tujuan Project
 
