@@ -17,8 +17,7 @@ Website dinamis bertema Mobile Legends: Bang Bang
 
 ## 🔗 Links
 
-- 🎨 Figma: [link figma]
-- 🌐 Hosting: [link hosting]
+- 🎨 Figma: [https://www.figma.com/team_invite/redeem/Vm6MJTGdxswbBlS0La0mN8?t=bKSbSgJmH2lou2wX-22]
 - 📁 Repo: [link github]
 
 ---
