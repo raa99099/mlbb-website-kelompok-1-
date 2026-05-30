@@ -9,7 +9,7 @@ Website dinamis bertema Mobile Legends: Bang Bang
 |------|------|
 | Reva Aura | Frontend Developer |
 | Aurellia | Backend Developer |
-| Finda | UI/UX Designer |
+| Finda w. | UI/UX Designer |
 
 **Subtema:** MLBB
 
@@ -18,7 +18,7 @@ Website dinamis bertema Mobile Legends: Bang Bang
 ## 🔗 Links
 
 - 🎨 Figma: [https://www.figma.com/team_invite/redeem/Vm6MJTGdxswbBlS0La0mN8?t=bKSbSgJmH2lou2wX-22]
-- 📁 Repo: [link github]
+- 📁 Repo: [https://github.com/raa99099/mlbb-website-kelompok-1-/tree/main]
 
 ---
 
