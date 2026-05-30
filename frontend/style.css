@@ -1,0 +1,29 @@
+.page-section{
+    padding:120px 8%;
+}
+
+.page-section h1{
+    text-align:center;
+    color:white;
+    margin-bottom:40px;
+}
+
+.hero-card{
+    background:#101826;
+    padding:25px;
+    border-radius:18px;
+    border:1px solid rgba(255,255,255,.08);
+    transition:.3s;
+}
+
+.hero-card:hover{
+    transform:translateY(-5px);
+}
+
+.hero-card h3{
+    color:#fff;
+}
+
+.hero-card p{
+    color:#a8b3c7;
+}
