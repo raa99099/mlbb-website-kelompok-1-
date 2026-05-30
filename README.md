@@ -57,5 +57,3 @@ Tabel:
 - PHP (no framework)
 - MySQL
 ```
-
-Sesuaikan nama anggota, link Figma, dan link hosting nanti setelah jadi. Mau saya bantu buatkan file lainnya?
