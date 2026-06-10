@@ -32,7 +32,8 @@ if (
 
     // ✅ DIUBAH: redirect balik ke login dengan pesan error
     // sebelumnya: echo "Login gagal";
-    header("Location: ../../frontend/login.php?error=Username+atau+password+salah");
+    header("Location: ../../frontend/login.php
+     ?error=Username+atau+password+salah");
     exit();
 
 }
