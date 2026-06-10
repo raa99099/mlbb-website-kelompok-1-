@@ -24,6 +24,18 @@
 
         <h2>Masuk ke Akun</h2>
 
+        <?php if (!empty($_GET['error'])): ?>
+        <div class="alert alert-error">
+            ❌ <?= htmlspecialchars($_GET['error']) ?>
+        </div>
+        <?php endif; ?>
+
+        <?php if (!empty($_GET['success'])): ?>
+        <div class="alert alert-success">
+            ✅ <?= htmlspecialchars($_GET['success']) ?>
+        </div>
+        <?php endif; ?>
+
         <form method="POST"
               action="../backend/auth/login.php">
 
