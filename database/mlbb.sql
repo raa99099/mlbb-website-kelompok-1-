@@ -1,89 +1,64 @@
-```sql
-CREATE DATABASE IF NOT EXISTS mlbb;
-USE mlbb;
-
--- =========================
--- TABLE USERS
--- =========================
-
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(100) NOT NULL,
+    nama VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    username VARCHAR(50) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
     role ENUM('admin','user') DEFAULT 'user'
 );
-
--- =========================
--- TABLE HEROES
--- =========================
 
 CREATE TABLE heroes (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nama VARCHAR(100) NOT NULL,
     role VARCHAR(50) NOT NULL,
-    damage INT NOT NULL
+    deskripsi TEXT NOT NULL,
+    image VARCHAR(255) NOT NULL
 );
-
--- =========================
--- TABLE ITEMS
--- =========================
 
 CREATE TABLE items (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nama VARCHAR(100) NOT NULL,
-    harga INT NOT NULL
+    kategori VARCHAR(50) NOT NULL,
+    deskripsi TEXT NOT NULL
 );
-
--- =========================
--- TABLE TEAMS
--- =========================
 
 CREATE TABLE teams (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nama_team VARCHAR(100) NOT NULL,
-    asal VARCHAR(100) NOT NULL
+    negara VARCHAR(100) NOT NULL,
+    deskripsi TEXT NOT NULL
 );
 
--- =========================
--- DATA USERS
--- =========================
+INSERT INTO heroes (nama, role, deskripsi, image) VALUES
+('Ling','Assassin','Hero dengan mobilitas tinggi dan burst damage mematikan.','ling.jpg'),
+('Julian','Fighter / Mage','Memiliki kombinasi skill yang sangat fleksibel.','julian.jpg'),
+('Beatrix','Marksman','Memiliki empat jenis senjata dengan gaya bermain berbeda.','beatrix.jpg'),
+('Fredrinn','Tank / Fighter','Memiliki durability tinggi dan crowd control kuat.','fredrin.jpg'),
+('Nolan','Assassin','Hero assassin dengan damage sangat besar.','nolan.jpg'),
+('Xavier','Mage','Mage dengan serangan jarak jauh dan ultimate global.','xavier.jpg');
 
-INSERT INTO users (username, password, role) VALUES
-('admin', '$2y$10$abcdefghijklmnopqrstuv', 'admin');
+INSERT INTO items (nama, kategori, deskripsi) VALUES
+('Blade of Despair','Physical Attack','Memberikan Physical Attack terbesar dan sangat efektif untuk hero core.'),
+('Endless Battle','Physical Attack','Menambahkan True Damage setelah menggunakan skill.'),
+('Blood Wings','Magic','Magic Power tinggi dan tambahan shield untuk mage.'),
+('Holy Crystal','Magic','Meningkatkan Magic Damage secara signifikan.'),
+('Immortality','Defense','Menghidupkan kembali hero setelah terbunuh.'),
+('Dominance Ice','Defense','Mengurangi Attack Speed dan HP Regen lawan.'),
+('Oracle','Defense','Meningkatkan efek shield dan regenerasi HP.'),
+('Divine Glaive','Magic','Memberikan Magic Penetration tinggi terhadap tank.');
 
--- =========================
--- DATA HEROES
--- =========================
+INSERT INTO teams (nama_team, negara, deskripsi) VALUES
+('ONIC Esports','Indonesia','Juara MPL Indonesia.'),
+('EVOS Glory','Indonesia','Juara Dunia M1.'),
+('Team Liquid PH','Filipina','Tim kompetitif asal Filipina di MPL Philippines.'),
+('Falcon Esports','Myanmar','Tim kuat dari Asia Tenggara.'),
+('Alter Ego','Indonesia','Salah satu tim unggulan Indonesia.');
 
-INSERT INTO heroes (nama, role, damage) VALUES
-('Hayabusa', 'Assassin', 95),
-('Miya', 'Marksman', 85),
-('Tigreal', 'Tank', 70),
-('Eudora', 'Mage', 88),
-('Chou', 'Fighter', 90),
-('Angela', 'Support', 65);
-
--- =========================
--- DATA ITEMS
--- =========================
-
-INSERT INTO items (nama, harga) VALUES
-('Blade of Despair', 3010),
-('Blood Wings', 3000),
-('Immortality', 2120),
-('Athena Shield', 2150),
-('War Axe', 2100),
-('Demon Hunter Sword', 2180);
-
--- =========================
--- DATA TEAMS
--- =========================
-
-INSERT INTO teams (nama_team, asal) VALUES
-('ONIC Esports', 'Indonesia'),
-('RRQ Hoshi', 'Indonesia'),
-('EVOS Glory', 'Indonesia'),
-('Team Liquid PH', 'Filipina'),
-('AP Bren', 'Filipina'),
-('Falcon Esports', 'Myanmar');
-```
+INSERT INTO users (nama,email,username,password,role)
+VALUES (
+'Administrator',
+'admin@mlbb.com',
+'admin',
+'$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
+'admin'
+);
