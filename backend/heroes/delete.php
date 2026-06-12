@@ -1,9 +1,16 @@
 <?php
-include "../config/db.php";
+session_start();
+include '../config/db.php';
 
-$id = $_GET['id'];
+if (isset($_GET['id'])) {
+    $id = (int) $_GET['id'];
+    $sql = "DELETE FROM heroes WHERE id = $id";
 
-mysqli_query($conn,
-"DELETE FROM heroes WHERE id='$id'");
-
-header("Location: ../../frontend/heroes.php");
+    if (mysqli_query($conn, $sql)) {
+        header("Location: ../../heroes.php?success=Hero berhasil dihapus");
+    } else {
+        header("Location: ../../heroes.php?error=Gagal menghapus hero");
+    }
+    exit();
+}
+?>
