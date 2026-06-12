@@ -1,16 +1,21 @@
 <?php
-include "../config/db.php";
+session_start();
+include '../config/db.php';
 
-$id = $_POST['id'];
-$nama = $_POST['nama'];
-$role = $_POST['role'];
-$damage = $_POST['damage'];
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $id       = (int) $_POST['id'];
+    $nama     = mysqli_real_escape_string($conn, $_POST['nama']);
+    $role     = mysqli_real_escape_string($conn, $_POST['role']);
+    $deskripsi = mysqli_real_escape_string($conn, $_POST['deskripsi']);
+    $image    = mysqli_real_escape_string($conn, $_POST['image']);
 
-mysqli_query($conn,
-"UPDATE heroes
-SET nama='$nama',
-role='$role',
-damage='$damage'
-WHERE id='$id'");
+    $sql = "UPDATE heroes SET nama='$nama', role='$role', deskripsi='$deskripsi', image='$image' WHERE id=$id";
 
-header("Location: ../../frontend/heroes.php");
+    if (mysqli_query($conn, $sql)) {
+        header("Location: ../../heroes.php?success=Hero berhasil diupdate");
+    } else {
+        header("Location: ../../heroes.php?error=Gagal mengupdate hero");
+    }
+    exit();
+}
+?>
