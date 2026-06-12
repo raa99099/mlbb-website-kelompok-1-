@@ -11,7 +11,6 @@ body{
     overflow-x:hidden;
 }
 
-/* NAVBAR */
 .navbar{
     position:sticky;
     top:0;
@@ -101,7 +100,6 @@ body{
     color:white;
 }
 
-/* HERO SECTION */
 .hero-section{
     min-height:100vh;
     display:flex;
@@ -168,7 +166,6 @@ body{
     background:#334155;
 }
 
-/* CARD */
 .section{
     padding:90px 8%;
 }
@@ -212,7 +209,6 @@ body{
     color:#00bfff;
 }
 
-/* ROLE */
 .roles-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
@@ -237,7 +233,6 @@ body{
     margin-bottom:10px;
 }
 
-/* CTA */
 .cta-section{
     padding:100px 8%;
     text-align:center;
@@ -253,7 +248,6 @@ body{
     margin-bottom:20px;
 }
 
-/* FOOTER */
 .footer{
     background:#111827;
 }
@@ -283,7 +277,6 @@ body{
     border-top:1px solid #334155;
 }
 
-/* PARTICLE */
 .particles{
     position:absolute;
     inset:0;
@@ -320,7 +313,6 @@ body{
     font-size:28px;
 }
 
-/* MOBILE */
 @media(max-width:768px){
 
 .hero-section{
