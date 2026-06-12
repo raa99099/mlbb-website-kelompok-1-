@@ -1,19 +1,13 @@
 <?php
 
 $host = "localhost";
-$user = "root";
-$pass = "";
-$db   = "mlbb";
+$user = "b1_db";
+$pass = "b1_db"; 
+$db   = "b1_db";
 
-$conn = mysqli_connect(
-    $host,
-    $user,
-    $pass,
-    $db
-);
+$conn = mysqli_connect($host, $user, $pass, $db);
 
-if(!$conn){
-    die("Koneksi gagal : "
-    . mysqli_connect_error());
+if (!$conn) {
+    die("Koneksi database gagal: " . mysqli_connect_error());
 }
 ?>
