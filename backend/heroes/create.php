@@ -1,12 +1,20 @@
 <?php
-include "../config/db.php";
+session_start();
+include '../config/db.php';
 
-$nama = $_POST['nama'];
-$role = $_POST['role'];
-$damage = $_POST['damage'];
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $nama     = mysqli_real_escape_string($conn, $_POST['nama']);
+    $role     = mysqli_real_escape_string($conn, $_POST['role']);
+    $deskripsi = mysqli_real_escape_string($conn, $_POST['deskripsi']);
+    $image    = mysqli_real_escape_string($conn, $_POST['image']);
 
-mysqli_query($conn,
-"INSERT INTO heroes(nama,role,damage)
-VALUES('$nama','$role','$damage')");
+    $sql = "INSERT INTO heroes (nama, role, deskripsi, image) VALUES ('$nama', '$role', '$deskripsi', '$image')";
 
-header("Location: ../../frontend/heroes.php");
+    if (mysqli_query($conn, $sql)) {
+        header("Location: ../../heroes.php?success=Hero berhasil ditambahkan");
+    } else {
+        header("Location: ../../tambah_hero.php?error=Gagal menambahkan hero");
+    }
+    exit();
+}
+?>
