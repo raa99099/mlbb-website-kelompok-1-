@@ -1,4 +1,3 @@
-// Navbar Mobile
 const navToggle = document.getElementById("navToggle");
 
 if(navToggle){
@@ -14,7 +13,6 @@ if(navToggle){
     });
 }
 
-// Smooth Scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
     anchor.addEventListener('click', function(e){
@@ -31,7 +29,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 });
 
-// Animation On Scroll
 const cards = document.querySelectorAll(
 '.feat-card,.role-card,.hero-card,.item-card,.team-card'
 );
