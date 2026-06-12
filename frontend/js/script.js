@@ -1,54 +1,8 @@
-// ======================
-// PARTICLE EFFECT
-// ======================
-
-function initParticles(id){
-
-    const container = document.getElementById(id);
-
-    if(!container) return;
-
-    for(let i=0; i<30; i++){
-
-        const particle =
-        document.createElement("div");
-
-        particle.classList.add("particle");
-
-        const size =
-        Math.random()*4 + 1;
-
-        particle.style.width =
-        size + "px";
-
-        particle.style.height =
-        size + "px";
-
-        particle.style.left =
-        Math.random()*100 + "%";
-
-        particle.style.animationDuration =
-        (10 + Math.random()*10) + "s";
-
-        particle.style.animationDelay =
-        Math.random()*5 + "s";
-
-        container.appendChild(particle);
-    }
-}
-
-// ======================
-// MOBILE NAVBAR
-// ======================
-
-const navToggle =
-document.getElementById("navToggle");
+// Navbar Mobile
+const navToggle = document.getElementById("navToggle");
 
 if(navToggle){
-
-    navToggle.addEventListener(
-    "click",
-    function(){
+    navToggle.addEventListener("click", () => {
 
         document
         .querySelector(".nav-links")
@@ -60,36 +14,48 @@ if(navToggle){
     });
 }
 
-// ======================
-// REGISTER VALIDATION
-// ======================
+// Smooth Scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
-const registerForm =
-document.getElementById("registerForm");
+    anchor.addEventListener('click', function(e){
 
-if(registerForm){
+        e.preventDefault();
 
-registerForm.addEventListener(
-"submit",
-function(e){
+        document.querySelector(
+            this.getAttribute('href')
+        ).scrollIntoView({
+            behavior:'smooth'
+        });
 
-const password =
-document.querySelector(
-"input[name='password']"
-).value;
-
-const confirm =
-document.getElementById(
-"confirmPassword"
-)?.value;
-
-if(confirm && password !== confirm){
-
-alert("Password tidak sama!");
-
-e.preventDefault();
-
-}
+    });
 
 });
-}
+
+// Animation On Scroll
+const cards = document.querySelectorAll(
+'.feat-card,.role-card,.hero-card,.item-card,.team-card'
+);
+
+const observer = new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+        }
+
+    });
+
+});
+
+cards.forEach(card => {
+
+    card.style.opacity = "0";
+    card.style.transform = "translateY(40px)";
+    card.style.transition = "0.6s";
+
+    observer.observe(card);
+
+});
